@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-brand-primary: #06b6d4;
+  --color-brand-secondary: #2563eb;
+  --color-brand-accent: #34d399;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans selection:bg-brand-primary/30;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-700 rounded-full border-2 border-slate-900 hover:bg-slate-600 transition-colors;
+}
+
+/* Immersive Gradients */
+.gradient-brand {
+  @apply bg-gradient-to-tr from-cyan-500 to-blue-600;
+}
+
+.gradient-glass {
+  @apply bg-slate-900/50 backdrop-blur-xl border border-slate-800/60;
+}
+
+.gradient-card {
+  @apply bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all duration-300;
+}
+
+.bg-immersive {
+  @apply bg-[radial-gradient(circle_at_top_right,_#1e293b,_#020617,_#020617)];
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400;
+}
+
